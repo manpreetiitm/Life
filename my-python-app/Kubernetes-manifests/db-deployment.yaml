@@ -15,9 +15,11 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql:5.7
+        image: mysql:latest
         env:
-          MYSQL_ROOT_PASSWORD: root_password
-          MYSQL_DATABASE: custom_db
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+         # MYSQL_ROOT_PASSWORD: "root_password"
+         # MYSQL_DATABASE: "custom_db"
         ports:
         - containerPort: 3306
